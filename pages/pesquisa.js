@@ -12,7 +12,7 @@ const Pesquisa = () => {
 
   const notas = [0, 1, 2, 3, 4, 5];
 
-  const [sucess, setSucess] = useState(false);
+  const [sucess, setSucess] = useState(true);
   const [retorno, setRetorno] = useState({});
 
   const save = async () => {
@@ -161,26 +161,26 @@ const Pesquisa = () => {
 
         {/* Sucesso na pesquisa */}
         {sucess && (
-          <div className="w-1/4 m-auto">
+          <>
             <div
-              className="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3 text-center"
+              className="bg-blue-100 border-t border-b border-blue-500 text-blue-700 max-w-2xl py-3 text-center m-auto"
               role="alert"
             >
               <p className="font-bold">Obrigado {form.Nome}</p>
               <p className="text-sm">A sua sugestão ou critica está salvo.</p>
             </div>
-            {retorno.showCupon && (
-              <div className="text-center border p-4 m-4 ">
-                Seu Cupom: <br />
-                <span className="font-bold text-2x1">{retorno.Cupom}</span>
-              </div>
-            )}
+            {/* {retorno.showCupon && ( */}
+            <div className="text-center border p-4 my-4 max-w-2xl m-auto sm:text-lg lg:text-2x  ">
+              Seu Cupom: <br />
+              <span className="font-bold">1EB8-D648-4F1</span>
+            </div>
+            {/* )} */}
             <div className="text-center  p-4 m-4 ">
-              <p className="italic text-xs">
+              <p className="italic sm:text-lg lg:text-2x ">
                 *Tire um print ou foto dessa tela e apresente ao supervisor.
               </p>
             </div>
-          </div>
+          </>
         )}
       </div>
     </>
