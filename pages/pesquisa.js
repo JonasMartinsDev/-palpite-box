@@ -12,7 +12,7 @@ const Pesquisa = () => {
 
   const notas = [0, 1, 2, 3, 4, 5];
 
-  const [sucess, setSucess] = useState(true);
+  const [sucess, setSucess] = useState(false);
   const [retorno, setRetorno] = useState({});
 
   const save = async () => {
@@ -169,12 +169,12 @@ const Pesquisa = () => {
               <p className="font-bold">Obrigado {form.Nome}</p>
               <p className="text-sm">A sua sugestão ou critica está salvo.</p>
             </div>
-            {/* {retorno.showCupon && ( */}
-            <div className="text-center border p-4 my-4 max-w-2xl m-auto sm:text-lg lg:text-2x  ">
-              Seu Cupom: <br />
-              <span className="font-bold">1EB8-D648-4F1</span>
-            </div>
-            {/* )} */}
+            {retorno.showCupon && (
+              <div className="text-center border p-4 my-4 max-w-2xl m-auto sm:text-lg lg:text-2x  ">
+                Seu Cupom: <br />
+                <span className="font-bold">{retorno.Cupom}</span>
+              </div>
+            )}
             <div className="text-center  p-4 m-4 ">
               <p className="italic sm:text-lg lg:text-2x ">
                 *Tire um print ou foto dessa tela e apresente ao supervisor.
